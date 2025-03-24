@@ -1,0 +1,53 @@
+﻿<Window x:Class="激光点云数据的平面分割.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:激光点云数据的平面分割"
+        mc:Ignorable="d"
+        Title="激光点云数据的平面分割" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu>
+            <Button x:Name="loadingButton" Margin="5" Click="loadingButton_Click">
+                <WrapPanel Margin="5">
+                    <Image Source="icon/Open.ico"/>
+                    <Label Content="读取数据" FontSize="16px" VerticalAlignment="Center"/>
+                </WrapPanel>
+            </Button>
+            <Button x:Name="calButton" Margin="5" Click="calButton_Click">
+                <WrapPanel Margin="5">
+                    <Image Source="icon/Calculate.ico"/>
+                    <Label Content="计算" FontSize="16px" VerticalAlignment="Center"/>
+                </WrapPanel>
+            </Button>
+            <Button x:Name="saveButton" Margin="5" Click="saveButton_Click">
+                <WrapPanel Margin="5">
+                    <Image Source="icon/Save.ico"/>
+                    <Label Content="保存结果" FontSize="16px" VerticalAlignment="Center"/>
+                </WrapPanel>
+            </Button>
+            <Button x:Name="outputButton" Margin="5" Click="outputButton_Click">
+                <WrapPanel Margin="5">
+                    <Image Source="icon/Save.ico"/>
+                    <Label Content="导出点云分割结果" FontSize="16px" VerticalAlignment="Center"/>
+                </WrapPanel>
+            </Button>
+        </Menu>
+        <TabControl x:Name="tabCtrl" Grid.Row="1" Margin="10">
+            <TabItem HorizontalAlignment="Center" Header="数据" VerticalAlignment="Center" >
+                <Grid Background="#FFE5E5E5">
+                    <TextBox x:Name="dataTextBox" Margin="10"/>
+                </Grid>
+            </TabItem>
+            <TabItem HorizontalAlignment="Center" Header="计算结果" VerticalAlignment="Center" >
+                <Grid Background="#FFE5E5E5">
+                    <TextBox x:Name="resultTextBox" Margin="10"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
